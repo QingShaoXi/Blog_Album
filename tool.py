@@ -111,7 +111,7 @@ def handle_photo():
                                                                    'month': date.month,
                                                                    'link': [filename],
                                                                    'text': [info],
-                                                                   'type': ['image']
+                                                                   'type': ['image','video']
                                                                    }
                                         } 
             list_info.append(new_dict)
@@ -120,7 +120,7 @@ def handle_photo():
                                                    'month': date.month,
                                                    'link': [filename],
                                                    'text': [info],
-                                                   'type': ['image']
+                                                   'type': ['image','video']
                                                    }
                         }
             list_info.append(new_dict)
