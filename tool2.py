@@ -90,6 +90,26 @@ def compress_photo():
     if len(file_list_src) == 0:
         print("=====没有新文件需要压缩=======")
     compress('4', des_dir, src_dir, file_list_src)
+	
+def cut_by_ratio(self):  
+        """按照图片长宽进行分割
+        
+        ------------
+        取中间的部分，裁剪成正方形
+        """  
+        im = Image.open(self.infile)  
+        (x, y) = im.size  
+        if x > y:  
+            region = (int(x/2-y/2), 0, int(x/2+y/2), y)  
+        elif x < y:  
+            region = (0, int(y/2-x/2), x, int(y/2+x/2))  
+        else:  
+            region = (0, 0, x, y)  
+
+        #裁切图片  
+        crop_img = im.crop(region)  
+        #保存裁切后的图片  
+        crop_img.save(self.outfile) 
 
 def handle_photo():
     '''根据图片的文件名处理成需要的json格式的数据
