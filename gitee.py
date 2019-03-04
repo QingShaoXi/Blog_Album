@@ -137,9 +137,10 @@ def handle_photo():
                                                                    }
                                         } 
             list_info.append(new_dict)
-        elif year_month != list_info[-1]['date']:  # 不是最后的一个日期，就新建一个dict
-            new_dict = {"date": year_month, "arr":{'year': date.year,
+        elif year_month_day != list_info[-1]['date']:  # 不是最后的一个日期，就新建一个dict
+            new_dict = {"date": year_month_day, "arr":{'year': date.year,
                                                    'month': date.month,
+												   'day': date.day,
                                                    'link': [filename],
                                                    'text': [info],
                                                    'type': ['image']
